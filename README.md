@@ -6,11 +6,11 @@ Bu depo, veri yapıları dersi için hazırlanmış haftalık materyalleri içer
 
 Her hafta bir veri yapısı konusu ele alınacaktır. İlgili haftanın klasöründe aşağıdaki içerikleri bulabilirsiniz:
 
-1.  **README.md:** Konunun teorik açıklaması, C kodu, modern dillerdeki kullanımı ve haftanın problemi.
+1.  **README.md:** Konunun teorik açıklaması, C kodu, modern dillerdeki kullanımı.
 2.  **`.c` dosyası:** Konuyla ilgili veri yapısının C dilindeki sıfırdan implementasyonu.
 
 ## Haftalık Konular
-
+-   **Hafta 0:** C Genel Tekrar
 -   **Hafta 1:** Dinamik Diziler (Arrays)
 -   **Hafta 2:** Bağlı Listeler (Linked Lists)
 -   **Hafta 3:** Yığın (Stack)
