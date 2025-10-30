@@ -7,7 +7,8 @@ Bu depo, veri yapıları dersi için hazırlanmış haftalık materyalleri içer
 Her hafta bir veri yapısı konusu ele alınacaktır. İlgili haftanın klasöründe aşağıdaki içerikleri bulabilirsiniz:
 
 1.  **README.md:** Konunun teorik açıklaması, C kodu, modern dillerdeki kullanımı.
-2.  **`.c` dosyası:** Konuyla ilgili veri yapısının C dilindeki sıfırdan implementasyonu.
+2.  **Generic Implementation Klasörü:** Konuyla ilgili veri yapısının C dilindeki sıfırdan implementasyonu.
+3. **Modern Usage Klasörü** Konuyla ilgili veri yapısının yüksek dillerde hazır kullanılışı
 
 ## Haftalık Konular
 -   **Hafta 0:** C Genel Tekrar

@@ -27,7 +27,7 @@ int main() {
     
     // Farklı türlerde pointerlar
     printf("\nFarklı türler:\n");
-    char karakter = 'A';
+    char karakter = 'a';
     char *char_ptr = &karakter;
     
     printf("karakter = %c\n", karakter);
