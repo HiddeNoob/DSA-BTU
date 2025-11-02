@@ -5,7 +5,7 @@ int main(){
     size_t veri = sizeof(int) + 1; // 4 + 1 byte
     void* ptr = malloc(veri); // 5 bytelık yer tahsis ettik
 
-    int* sayi = ptr; // 4 bytelık yazma okuma için int pointer'ına casting yaptık
+    int* sayi = (int*)ptr; // 4 bytelık yazma okuma için int pointer'ına casting yaptık
 
     *sayi = 5; // ilk 4 bytelık kısma yazdı
     // ancak sonda kalan yukarda fazladan istediğimiz 1 byte

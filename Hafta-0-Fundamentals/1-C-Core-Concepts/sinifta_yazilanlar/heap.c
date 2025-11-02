@@ -11,5 +11,5 @@ int main(){
     // bu address b pointerına atandı
 
     // heaple stack farklı yerlerde
-    printf("stack -> %p heap -> %p",&a,b); 
+    printf("stack -> %p heap -> %p\n",&a,b); 
 }
