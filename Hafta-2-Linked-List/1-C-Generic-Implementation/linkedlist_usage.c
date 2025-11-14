@@ -20,6 +20,17 @@ void freePerson(void* data) {
     free(data);
 }
 
+void printList(LinkedList* list){
+        // Yazdır
+    Node* current = list->head;
+    while (current != NULL) {
+        printPerson(current->data);
+        printf(" -> ");
+        current = current->next;
+    }
+    printf("NULL\n");
+}
+
 int main() {
     // LinkedList oluştur
     LinkedList* list = createArray(freePerson);
@@ -39,14 +50,7 @@ int main() {
     appendToHead(list, p2);
     appendToTail(list, p3);
     
-    // Yazdır
-    Node* current = list->head;
-    while (current != NULL) {
-        printPerson(current->data);
-        printf(" -> ");
-        current = current->next;
-    }
-    printf("NULL\n");
+    printList(list);
     
     // get() test
     Person* found = (Person*)get(list, 1);
@@ -60,6 +64,8 @@ int main() {
         printf("Removed: %s\n", removed->name);
         free(removed);
     }
+
+    printList(list);
     
     deleteArray(list);
     return 0;
