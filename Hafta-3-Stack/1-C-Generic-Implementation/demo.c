@@ -30,7 +30,7 @@ static void printStudent(void* data) {
         printf("{NULL}");
         return;
     }
-    printf("{id=%d, gpa=%.2f}", student->id, student->gpa);
+    printf("{id=%d, gpa=%.2f}, ", student->id, student->gpa);
 }
 
 static void freeStudent(void* data) {
@@ -51,16 +51,18 @@ int main(void) {
 
     printStack(stack, printStudent);
 
+    printf("\n");
     
     while (!isEmpty(stack)) {
         Student* student = (Student*)pop(stack);
         if (student == NULL) {
             continue;
         }
-        printf("  <- id %d, gpa %.2f\n", student->id, student->gpa);
+        printf("  <- id %d, gpa %.2f ", student->id, student->gpa);
         free(student);
     }
 
-    destroyStack(&stack, freeStudent);
+    printf("\n");
+    destroyStack(stack, freeStudent);
     return 0;
 }
