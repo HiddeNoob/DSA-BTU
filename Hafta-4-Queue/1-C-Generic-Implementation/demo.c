@@ -4,14 +4,13 @@
 struct Process {
     int pid;
     char name[50];
-    int priority;
 };
 
 
 void printProcess(void* data) {
     if (data != NULL) {
         struct Process* p = (struct Process*)data;
-        printf("Process(PID:%d, Name:%s, Priority:%d)", p->pid, p->name, p->priority);
+        printf("Process(PID:%d, Name:%s)", p->pid, p->name);
     } else {
         printf("NULL");
     }
@@ -24,10 +23,10 @@ int main() {
     // Queue oluştur
     struct Queue* processQueue = createQueue();
     
-    struct Process p1 = {101, "Chrome", 1};
-    struct Process p2 = {102, "Firefox", 2};
-    struct Process p3 = {103, "VSCode", 1};
-    struct Process p4 = {104, "Spotify", 3};
+    struct Process p1 = {101, "Chrome"};
+    struct Process p2 = {102, "Firefox"};
+    struct Process p3 = {103, "VSCode"};
+    struct Process p4 = {104, "Spotify"};
     
     enqueue(processQueue, &p1);
     printProcess(&p1);
