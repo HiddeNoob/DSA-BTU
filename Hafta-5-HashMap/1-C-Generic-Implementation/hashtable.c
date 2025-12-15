@@ -6,62 +6,87 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "dynarray.h"
-#include "linkedlist.h"
+
+#define BUCKET_COUNT 100
+
+int hash(int key){
+    return key % BUCKET_COUNT;
+}
 
 typedef struct {
     int key;
-    int value;
+    void* value;
 } Entry;
 
+typedef struct Node
+{
+    Entry* data;
+    Node* next;
+}Node;
+
+
 typedef struct {
-    DynArray* buckets;
-    int size;
+    Node* buckets[BUCKET_COUNT];
     int count;
 } HashTable;
 
-int hash(int key, int size) {
-    // TODO
-    return 0;
+
+
+
+
+HashTable* HashTableConstructor(){
+    HashTable* ptr = (HashTable*)malloc(sizeof(HashTable));
+    ptr->count = 0;
+    return ptr;
 }
 
-void entry_destructor(void* data) {
-    // TODO
+void insert(HashTable* table,int keyData,void* value){
+    
+    int key = hash(keyData);
+    
+    Node** bucket = &table->buckets[key];
+
+
+    Entry* entry = (Entry*)malloc(sizeof(Entry));
+
+    entry->key = keyData;
+    entry->value = value;
+
+
+    Node* dataNode = (Node*)malloc(sizeof(Node));
+    dataNode->next = NULL;
+
+    dataNode->data = entry;
+
+    if(*bucket == NULL){
+        *bucket = dataNode;
+    }else{
+
+        Node* temp = *bucket;
+        *bucket = dataNode;
+
+        dataNode->next = temp;
+
+    }
 }
 
-void bucket_destructor(void* data) {
-    // TODO
+
+void* get(HashTable* table,int* key){
+    int bucketId = hash(*key);
+
+    Node** currentNode = &table->buckets[bucketId];
+
+    void* data = NULL;
+
+    while(*currentNode != NULL){
+        Entry* entry = (*currentNode)->data;
+        if(entry->key == *key){
+            data = entry->value;
+            break;
+        }
+        currentNode = &(*currentNode)->next; 
+    }
+
+    return data;
 }
 
-Entry* ht_find_entry(LinkedList* bucket, int key) {
-    // TODO
-    return NULL;
-}
-
-HashTable* ht_create(int size) {
-    // TODO
-    return NULL;
-}
-
-void ht_destroy(HashTable* ht) {
-    // TODO
-}
-
-void ht_insert(HashTable* ht, int key, int value) {
-    // TODO
-}
-
-int ht_search(HashTable* ht, int key, int* found) {
-    // TODO
-    if (found) *found = 0;
-    return 0;
-}
-
-int ht_delete(HashTable* ht, int key) {
-    // TODO
-    return 0;
-}
-
-void ht_print(HashTable* ht) {
-    // TODO
-}
