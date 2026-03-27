@@ -17,5 +17,3 @@ Her hafta bir veri yapısı konusu ele alınacaktır. İlgili haftanın klasör�
 -   **Hafta 3:** Yığın (Stack)
 -   **Hafta 4:** Kuyruk (Queue)
 -   **Hafta 5:** Hash Tabloları (Hash Tables)
--   **Hafta 6:** İkili Arama Ağaçları (Binary Search Trees)
--   **Hafta 7:** Graflar (Graphs)
